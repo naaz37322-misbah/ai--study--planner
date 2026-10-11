@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misbah Naaz | Mathematics × Technology</title>
+<meta name="description" content="Portfolio of Misbah Naaz — Mathematics student exploring AI, Machine Learning, Cryptography, Game Theory and technology.">
+<style>
+:root{
+  --bg:#f7f8fc; --surface:#fff; --ink:#15182b; --muted:#687086;
+  --purple:#6d5dfc; --purple2:#9b6cff; --blue:#4f8cff;
+  --line:#e7e9f2; --soft:#f0efff; --dark:#171a32;
+  --shadow:0 20px 55px rgba(25,28,65,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+
+/* NAV */
+nav{position:fixed;z-index:50;top:0;left:0;right:0;background:rgba(255,255,255,.88);backdrop-filter:blur(15px);border-bottom:1px solid rgba(231,233,242,.8)}
+.nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.35rem;font-weight:850;letter-spacing:-.7px}
+.logo span{color:var(--purple)}
+.nav-links{display:flex;gap:27px;align-items:center;color:#555d73;font-size:.93rem;font-weight:700}
+.nav-links a{transition:.2s}.nav-links a:hover{color:var(--purple)}
+.nav-cta{padding:9px 15px;border-radius:10px;background:var(--dark);color:#fff!important}
+.menu{display:none;background:none;border:0;font-size:1.55rem}
+
+/* HERO */
+.hero{padding:155px 0 105px;overflow:hidden;background:
+radial-gradient(circle at 85% 16%,rgba(155,108,255,.18),transparent 27%),
+radial-gradient(circle at 9% 35%,rgba(79,140,255,.12),transparent 28%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:var(--soft);color:#5c50e8;border:1px solid #dedbff;padding:7px 13px;border-radius:999px;font-size:.82rem;font-weight:800;margin-bottom:20px}
+.kicker:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--purple)}
+h1{font-size:clamp(3rem,6.5vw,5.6rem);line-height:1.02;letter-spacing:-3.2px;margin-bottom:23px}
+.gradient{background:linear-gradient(100deg,var(--purple),var(--purple2),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-text{font-size:1.1rem;color:var(--muted);max-width:690px;margin-bottom:30px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:12px;font-weight:800;border:1px solid var(--line);transition:.25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{color:#fff;border:0;background:linear-gradient(135deg,var(--purple),var(--purple2));box-shadow:0 12px 28px rgba(109,93,252,.23)}
+.hero-card{position:relative;background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:30px;padding:34px;box-shadow:var(--shadow)}
+.hero-card:before{content:"π";position:absolute;right:24px;top:13px;color:#e7e5ff;font-size:5rem;font-weight:900;line-height:1}
+.avatar{width:155px;height:155px;border-radius:50%;display:grid;place-items:center;margin:4px auto 22px;background:linear-gradient(135deg,#6658f7,#a977ff);color:#fff;font-size:3.4rem;font-weight:900;box-shadow:0 20px 40px rgba(109,93,252,.25)}
+.hero-card h3{text-align:center;font-size:1.4rem}.hero-card p{text-align:center;color:var(--muted);font-size:.94rem}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+.stat{background:#f8f8fc;border:1px solid #ececf4;border-radius:16px;padding:14px;text-align:center}
+.stat strong{display:block;font-size:1.15rem}.stat span{font-size:.76rem;color:var(--muted)}
+
+/* SECTIONS */
+section{padding:92px 0}
+.section-head{margin-bottom:34px}
+.eyebrow{text-transform:uppercase;letter-spacing:1.7px;color:var(--purple);font-size:.75rem;font-weight:900}
+h2{font-size:2.25rem;letter-spacing:-1.2px;margin-top:4px}
+.section-head p{color:var(--muted);max-width:720px;margin-top:7px}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:23px;padding:30px;box-shadow:0 10px 30px rgba(31,35,70,.04)}
+.card p{color:var(--muted)}
+.focus-title{font-size:1.15rem;margin:5px 0 17px}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{padding:9px 13px;border-radius:11px;background:#fafaff;border:1px solid var(--line);font-weight:750;font-size:.88rem}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.skill-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;transition:.25s}
+.skill-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.skill-icon{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:1.2rem;margin-bottom:15px}
+.skill-card h3{margin-bottom:5px}.skill-card p{font-size:.9rem;color:var(--muted)}
+
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+.project{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;transition:.25s}
+.project:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.project-icon{width:48px;height:48px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:1.3rem;margin-bottom:17px}
+.project h3{margin-bottom:7px}.project p{color:var(--muted);font-size:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}.tag{font-size:.72rem;padding:5px 9px;border-radius:999px;background:#f2f3f8;color:#596177;font-weight:700}
+
+/* JOURNEY */
+.journey{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.timeline{border-left:2px solid #dedcff;padding-left:22px}
+.timeline-item{position:relative;margin-bottom:23px}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-item:before{content:"";position:absolute;left:-31px;top:9px;width:13px;height:13px;border-radius:50%;background:var(--purple);box-shadow:0 0 0 5px #eeecff}
+.timeline-item span{color:var(--purple);font-weight:800;font-size:.8rem}.timeline-item h3{font-size:1.06rem;margin:2px 0}.timeline-item p{font-size:.9rem;color:var(--muted)}
+
+/* CONTACT */
+.contact-box{background:linear-gradient(135deg,#161a35,#31275f);border-radius:30px;padding:45px;color:#fff;display:grid;grid-template-columns:1fr auto;gap:35px;align-items:center;box-shadow:var(--shadow)}
+.contact-box h2{margin-top:5px}.contact-box p{color:#d9daea;max-width:650px;margin-top:7px}
+.contact-links{display:flex;flex-wrap:wrap;gap:10px}.contact-links a{background:#fff;color:#20233c;padding:11px 15px;border-radius:11px;font-weight:800}
+
+footer{padding:29px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.88rem}
+
+/* MOBILE */
+@media(max-width:850px){
+ .nav-links{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}
+ .nav-links.open{display:flex}.menu{display:block}
+ .hero-grid,.about-grid,.journey,.contact-box{grid-template-columns:1fr}
+ .skills-grid,.projects{grid-template-columns:1fr 1fr}
+ .hero{padding-top:125px}.hero-card{max-width:520px;margin:auto}
+}
+@media(max-width:560px){
+ .skills-grid,.projects{grid-template-columns:1fr}
+ h1{font-size:3rem;letter-spacing:-2px}.hero-text{font-size:1rem}
+ section{padding:70px 0}.contact-box{padding:30px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="container nav-inner">
+  <a class="logo" href="#home">Misbah<span>.</span></a>
+  <button class="menu" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <div class="nav-links">
+   <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+   <a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact" class="nav-cta">Let's Connect</a>
+  </div>
+ </div>
+</nav>
+
+<header id="home" class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="kicker">Mathematics • AI • Technology</div>
+   <h1>Hi, I'm <span class="gradient">Misbah Naaz</span></h1>
+   <p class="hero-text">A 7th-semester Mathematics student exploring Artificial Intelligence, Machine Learning, Cryptography and Game Theory — with a passion for turning mathematical thinking into practical ideas.</p>
+   <div class="buttons">
+    <a class="btn primary" href="#projects">Explore My Work ↗</a>
+    <a class="btn" href="#about">About Me</a>
+   </div>
+  </div>
+
+  <div class="hero-card">
+   <div class="avatar">MN</div>
+   <h3>Mathematics Student</h3>
+   <p>Future AI & data-driven problem solver</p>
+   <div class="stats">
+    <div class="stat"><strong>7th</strong><span>Semester</span></div>
+    <div class="stat"><strong>AI + ML</strong><span>Exploring</span></div>
+    <div class="stat"><strong>Crypto</strong><span>Learning</span></div>
+    <div class="stat"><strong>∞</strong><span>Curiosity</span></div>
+   </div>
+  </div>
+ </div>
+</header>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">About Me</div><h2>Mathematics with a technology mindset</h2><p>My portfolio reflects my academic journey, curiosity and the skills I am developing for the future.</p></div>
+  <div class="about-grid">
+   <div class="card">
+    <p>I am a 7th-semester Mathematics student who enjoys understanding how mathematical concepts connect with modern technology. I am gradually building practical skills in Artificial Intelligence, Machine Learning and data-driven problem solving.</p>
+    <br>
+    <p>My academic interests also include Cryptography and Game Theory. I like learning through projects because they help me turn concepts from the classroom into something practical and understandable.</p>
+   </div>
+   <div class="card">
+    <div class="eyebrow">My Focus</div>
+    <h3 class="focus-title">Learning • Building • Improving</h3>
+    <div class="pills">
+     <span class="pill">Mathematics</span><span class="pill">Artificial Intelligence</span>
+     <span class="pill">Machine Learning</span><span class="pill">Prompt Engineering</span>
+     <span class="pill">Cryptography</span><span class="pill">Game Theory</span>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Skills & Learning</div><h2>What I'm learning</h2><p>A combination of mathematical thinking and modern technology.</p></div>
+  <div class="skills-grid">
+   <div class="skill-card"><div class="skill-icon">∑</div><h3>Mathematics</h3><p>Mathematical reasoning, problem solving and analytical thinking.</p></div>
+   <div class="skill-card"><div class="skill-icon">🤖</div><h3>Artificial Intelligence</h3><p>Exploring AI concepts and practical AI-assisted workflows.</p></div>
+   <div class="skill-card"><div class="skill-icon">📊</div><h3>Machine Learning</h3><p>Learning datasets, algorithms, prediction and evaluation.</p></div>
+   <div class="skill-card"><div class="skill-icon">💬</div><h3>Prompt Engineering</h3><p>Designing clear prompts and refining AI responses.</p></div>
+   <div class="skill-card"><div class="skill-icon">🔐</div><h3>Cryptography</h3><p>Studying secure communication and mathematical foundations.</p></div>
+   <div class="skill-card"><div class="skill-icon">♟</div><h3>Game Theory</h3><p>Exploring strategic decisions, players, payoffs and optimal choices.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Selected Work</div><h2>Projects I'm working on</h2><p>Academic projects that connect my learning with real-world problems.</p></div>
+  <div class="projects">
+   <article class="project">
+    <div class="project-icon">📦</div><h3>Stockout Risk Prediction</h3>
+    <p>A Machine Learning concept for predicting stockout risk in grocery/FMCG businesses and supporting better inventory decisions.</p>
+    <div class="tags"><span class="tag">Machine Learning</span><span class="tag">Inventory</span><span class="tag">FMCG</span></div>
+   </article>
+   <article class="project">
+    <div class="project-icon">🤖</div><h3>AI & Prompt Engineering</h3>
+    <p>Academic work focused on structured prompting, clarifying business needs and improving AI-generated responses.</p>
+    <div class="tags"><span class="tag">AI</span><span class="tag">Prompting</span><span class="tag">Generative AI</span></div>
+   </article>
+   <article class="project">
+    <div class="project-icon">🏠</div><h3>House Price Prediction</h3>
+    <p>An introductory Machine Learning project exploring how property features can be used to predict house prices.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">Regression</span><span class="tag">ML</span></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="journey">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">My Journey</div><h2>Education & academic interests</h2></div>
+  <div class="journey">
+   <div class="card timeline">
+    <div class="timeline-item"><span>Current</span><h3>BS Mathematics — 7th Semester</h3><p>Developing a strong mathematical foundation while exploring AI, Machine Learning, Cryptography and Game Theory.</p></div>
+    <div class="timeline-item"><span>Academic Direction</span><h3>Mathematics × Computing</h3><p>Interested in connecting mathematical reasoning with technology, data and practical decision-making.</p></div>
+   </div>
+   <div class="card">
+    <div class="eyebrow">Beyond the Classroom</div>
+    <h3 style="margin:5px 0 10px">Always learning something new</h3>
+    <p>I enjoy exploring new tools, building small projects, understanding difficult concepts step by step and sharing my learning professionally.</p>
+    <div class="pills" style="margin-top:20px"><span class="pill">Python Basics</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">Data Analysis</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="contact-box">
+   <div>
+    <div class="eyebrow" style="color:#bdb7ff">Let's Connect</div>
+    <h2>Let's connect professionally</h2>
+    <p>I'm open to learning opportunities, academic collaboration and conversations around mathematics, AI and technology.</p>
+   </div>
+   <div class="contact-links">
+    <a href="mailto:your-email@example.com">Email</a>
+    <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>© 2026 Misbah Naaz • Mathematics × Technology × Curiosity</footer>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
+</script>
+</body>
+</html>
